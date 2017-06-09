@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Source.Entiteti
 {
@@ -15,11 +12,11 @@ namespace Source.Entiteti
 
         public virtual Nastavnik Profesor { get; set; }
 
-        public virtual IList<Predaje> Nastavnici { get; set; }
-
+        public virtual IList<Nastavnik> Profesori { get; set; }
+        
         public Predmet()
         {
-            Nastavnici = new List<Predaje>();
+            Profesori = new List<Nastavnik>();
         }
     }
 }

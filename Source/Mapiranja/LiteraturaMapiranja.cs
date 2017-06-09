@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentNHibernate.Mapping;
+﻿using FluentNHibernate.Mapping;
 using Source.Entiteti;
 
 namespace Source.Mapiranja
@@ -20,7 +15,11 @@ namespace Source.Mapiranja
 
             References(x => x.Pisao).Column("AUTOR").Cascade.All().LazyLoad();
 
-            HasMany(x => x.Koristi).KeyColumn("LITERATURA").Cascade.All().LazyLoad();
+            HasManyToMany(x => x.Projekti)
+                .Table("REFERENCIRA")
+                .ParentKeyColumn("LITERATURA")
+                .ChildKeyColumn("PROJEKAT")
+                .Cascade.All();
         }
     }
 }

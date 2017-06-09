@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Source.Entiteti;
+﻿using Source.Entiteti;
 using FluentNHibernate.Mapping;
 
 namespace Source.Mapiranja
@@ -18,7 +13,11 @@ namespace Source.Mapiranja
 
             Map(x => x.Naziv, "NAZIV");
 
-            HasMany(x => x.Radina).KeyColumn("GRUPA").LazyLoad().Cascade.All().Inverse();
+            HasManyToMany(x => x.Projekti)
+                .Table("RADI_NA")
+                .ParentKeyColumn("GRUPA")
+                .ChildKeyColumn("PROJEKAT")
+                .Cascade.All();
         }
     }
 }

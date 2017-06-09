@@ -13,11 +13,11 @@ namespace Source.Entiteti
 
         public virtual Autor Pisao { get; set; }
 
-        public virtual IList<Referencira> Koristi { get; set; }
+        public virtual IList<Projekat> Projekti { get; set; }
 
         public Literatura()
         {
-            Koristi = new List<Referencira>();
+            Projekti = new List<Projekat>();
         }
     }
 }

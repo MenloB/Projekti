@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Source.Entiteti
 {
@@ -17,14 +14,11 @@ namespace Source.Entiteti
 
         public virtual Predmet predmet { get; set; }
 
-        public virtual IList<Referencira> Ref { get; set; }
-
-        public virtual IList<RadiNa> Projektu { get; set; }
+        public virtual IList<Grupa> Grupe { get; set; }
 
         public Projekat()
         {
-            Ref = new List<Referencira>();
-            Projektu = new List<RadiNa>();
+            Grupe = new List<Grupa>();
         }
     }
 }

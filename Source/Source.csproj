@@ -66,12 +66,9 @@
     <Compile Include="Entiteti\Literatura.cs" />
     <Compile Include="Entiteti\Nastavnik.cs" />
     <Compile Include="Entiteti\PrakticniProjekat.cs" />
-    <Compile Include="Entiteti\Predaje.cs" />
     <Compile Include="Entiteti\Predmet.cs" />
     <Compile Include="Entiteti\Projekat.cs" />
     <Compile Include="Entiteti\Rad.cs" />
-    <Compile Include="Entiteti\RadiNa.cs" />
-    <Compile Include="Entiteti\Referencira.cs" />
     <Compile Include="Entiteti\Student.cs" />
     <Compile Include="Entiteti\TeorijskiProjekat.cs" />
     <Compile Include="Entiteti\WebStranice.cs" />
@@ -89,12 +86,9 @@
     <Compile Include="Mapiranja\LiteraturaMapiranja.cs" />
     <Compile Include="Mapiranja\NastavnikMapiranja.cs" />
     <Compile Include="Mapiranja\PrakticniProjekatMapiranja.cs" />
-    <Compile Include="Mapiranja\PredajeMapiranja.cs" />
     <Compile Include="Mapiranja\PredmetMapiranja.cs" />
     <Compile Include="Mapiranja\ProjekatMapiranja.cs" />
-    <Compile Include="Mapiranja\RadiNaMapiranja.cs" />
     <Compile Include="Mapiranja\RadMapiranja.cs" />
-    <Compile Include="Mapiranja\ReferenciraMapiranja.cs" />
     <Compile Include="Mapiranja\StudentMapiranja.cs" />
     <Compile Include="Mapiranja\TeorijskiProjekatMapiranja.cs" />
     <Compile Include="Mapiranja\WebStraniceMapiranja.cs" />

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Source.Entiteti;
+﻿using Source.Entiteti;
 using FluentNHibernate.Mapping;
 
 namespace Source.Mapiranja
@@ -20,7 +15,11 @@ namespace Source.Mapiranja
             Map(x => x.SIme, "S_IME");
             Map(x => x.Prezime, "PREZIME");
 
-            HasMany(x => x.NaPredmetu).KeyColumn("OSOBA").LazyLoad().Cascade.All().Inverse();
+            HasManyToMany(x => x.Predmeti)
+                .Table("PREDAJE")
+                .ParentKeyColumn("OSOBA")
+                .ChildKeyColumn("SIFRA")
+                .Cascade.All();
         }
     }
 }

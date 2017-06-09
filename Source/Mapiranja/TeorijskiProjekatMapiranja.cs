@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentNHibernate.Mapping;
+﻿using FluentNHibernate.Mapping;
 using Source.Entiteti;
 
 namespace Source.Mapiranja
@@ -17,6 +12,12 @@ namespace Source.Mapiranja
             KeyColumn("ID_PROJEKTA");
 
             Map(x => x.BrojStrana, "BROJ_STRANA");
+
+            HasManyToMany(x => x.Literatura)
+                .Table("REFERENCIRA")
+                .ParentKeyColumn("TEORIJSKI")
+                .ChildKeyColumn("LITERATURA")
+                .Cascade.All().Inverse();
         }
     }
 }

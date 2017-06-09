@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NHibernate;
 using Source.Entiteti;
-using Source.Mapiranja;
+
+
 
 namespace Source
 {
@@ -23,9 +17,14 @@ namespace Source
         private void button1_Click(object sender, EventArgs e)
         {
             ISession s = DataLayer.GetSession();
-            Grupa g = s.Load<Grupa>(3);
+            Nastavnik n = s.Load<Nastavnik>(3);
 
-            MessageBox.Show(g.Naziv);
+            MessageBox.Show(n.Ime);
+
+            foreach(Predmet p in n.Predmeti)
+            {
+                MessageBox.Show(p.Naziv);
+            }
             
 
             s.Close();
