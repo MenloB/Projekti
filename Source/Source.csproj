@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer.cs" />
+    <Compile Include="DTOManager.cs" />
+    <Compile Include="DTOs.cs" />
     <Compile Include="Entiteti\Autor.cs" />
     <Compile Include="Entiteti\Clanak.cs" />
     <Compile Include="Entiteti\Grupa.cs" />
@@ -92,10 +94,19 @@
     <Compile Include="Mapiranja\StudentMapiranja.cs" />
     <Compile Include="Mapiranja\TeorijskiProjekatMapiranja.cs" />
     <Compile Include="Mapiranja\WebStraniceMapiranja.cs" />
+    <Compile Include="PrikaziPredmet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrikaziPredmet.Designer.cs">
+      <DependentUpon>PrikaziPredmet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrikaziPredmet.resx">
+      <DependentUpon>PrikaziPredmet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
