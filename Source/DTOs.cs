@@ -3,34 +3,79 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Source.Entiteti;
 
 namespace Source
 {
-    public class PredmetDTO
+    public class DTPredmet
     {
-        public int PredmetId { get; set; }
-        public string PredmetNaziv { get; set; }
-        public string Katedra { get; set; }
-        public string Semestar { get; set; }
-        public string Nastavik { get; set; }
+        public virtual int SifraPredmeta { get; set; }
+        public virtual String NazivPredmeta { get; set; }
+        public virtual String KatedraPredmeta { get; set; }
+        public virtual String SemestarPredmeta { get; set; }
 
-
-        public PredmetDTO()
+        public DTPredmet()
         {
-
         }
 
-        public PredmetDTO(int PredmetId, 
-            string PredmetNaziv, 
-            string Katedra, 
-            string Semestar, 
-            string Nastavnik)
+        public DTPredmet(int Sifra, String Naziv, String Katedra, String Semestar)
         {
-            this.PredmetId    = PredmetId;
-            this.PredmetNaziv = PredmetNaziv;
-            this.Katedra      = Katedra;
-            this.Semestar     = Semestar;
-            this.Nastavik     = Nastavik;
+            this.SifraPredmeta    = Sifra;
+            this.NazivPredmeta    = Naziv;
+            this.KatedraPredmeta  = Katedra;
+            this.SemestarPredmeta = Semestar;
+        }
+    }
+
+    public class DTProjekat
+    {
+        public virtual int ProjekatId { get; set; }
+        public virtual String ProjekatNaziv { get; set; }
+        public virtual String ProjekatTip { get; set; }
+        public virtual int ProjekatGodina { get; set; }
+        public virtual String ProjekatZavrsen { get; set; }
+        public virtual String ProjekatGrupni { get; set; }
+
+        public DTProjekat()
+        {
+        }
+
+        public DTProjekat(int ProjekatId, String ProjekatNaziv, String ProjekatTip, 
+            int ProjekatGodina, String ProjekatZavrsen, String ProjekatGrupni)
+        {
+            this.ProjekatId      = ProjekatId;
+            this.ProjekatNaziv   = ProjekatNaziv;
+            this.ProjekatTip     = ProjekatTip;
+            this.ProjekatGodina  = ProjekatGodina;
+            this.ProjekatZavrsen = ProjekatZavrsen;
+            this.ProjekatGrupni  = ProjekatGrupni;
+        }
+    }
+
+    public class DTLiteratura
+    {
+        public virtual int LiteraturaId { get; set; }
+        public virtual String LiteraturaTip { get; set; }
+    }
+
+    public class DTRad : DTLiteratura
+    {
+        public virtual String RadNaziv { get; set; }
+        public virtual String RadFormat { get; set; }
+        public virtual String RadKonferencija { get; set; }
+        public virtual String RadAdresa { get; set; }
+
+        public DTRad()
+        {
+        }
+
+        public DTRad(int RadInt, String RadNaziv, String RadFormat, String RadKonferencija, String RadAdresa)
+        {
+            LiteraturaId = RadInt;
+            this.RadNaziv        = RadNaziv;
+            this.RadFormat       = RadFormat;
+            this.RadKonferencija = RadKonferencija;
+            this.RadAdresa       = RadAdresa;
         }
     }
 }

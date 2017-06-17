@@ -60,9 +60,12 @@
             this.autoreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.studenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grupeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.izvestajiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webStraniceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajBtn = new System.Windows.Forms.Button();
+            this.obrisiBtn = new System.Windows.Forms.Button();
+            this.closeBtn = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +76,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Predmeti";
+            this.button1.Text = "Izmeni";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -225,20 +228,20 @@
             this.izvestajiToolStripMenuItem,
             this.webStraniceToolStripMenuItem});
             this.ucitajToolStripMenuItem1.Name = "ucitajToolStripMenuItem1";
-            this.ucitajToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.ucitajToolStripMenuItem1.Size = new System.Drawing.Size(104, 22);
             this.ucitajToolStripMenuItem1.Text = "Ucitaj";
             // 
             // predmeteToolStripMenuItem1
             // 
             this.predmeteToolStripMenuItem1.Name = "predmeteToolStripMenuItem1";
-            this.predmeteToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.predmeteToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.predmeteToolStripMenuItem1.Text = "Predmete";
             this.predmeteToolStripMenuItem1.Click += new System.EventHandler(this.predmeteToolStripMenuItem1_Click);
             // 
             // projekteToolStripMenuItem1
             // 
             this.projekteToolStripMenuItem1.Name = "projekteToolStripMenuItem1";
-            this.projekteToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.projekteToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.projekteToolStripMenuItem1.Text = "Projekte";
             this.projekteToolStripMenuItem1.Click += new System.EventHandler(this.projekteToolStripMenuItem1_Click);
             // 
@@ -249,7 +252,7 @@
             this.clankoviToolStripMenuItem,
             this.knjigeToolStripMenuItem});
             this.literaturuToolStripMenuItem1.Name = "literaturuToolStripMenuItem1";
-            this.literaturuToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.literaturuToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.literaturuToolStripMenuItem1.Text = "Literaturu";
             this.literaturuToolStripMenuItem1.Click += new System.EventHandler(this.literaturuToolStripMenuItem1_Click);
             // 
@@ -277,51 +280,81 @@
             // nastavnikeToolStripMenuItem1
             // 
             this.nastavnikeToolStripMenuItem1.Name = "nastavnikeToolStripMenuItem1";
-            this.nastavnikeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.nastavnikeToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.nastavnikeToolStripMenuItem1.Text = "Nastavnike";
             this.nastavnikeToolStripMenuItem1.Click += new System.EventHandler(this.nastavnikeToolStripMenuItem1_Click);
             // 
             // autoreToolStripMenuItem1
             // 
             this.autoreToolStripMenuItem1.Name = "autoreToolStripMenuItem1";
-            this.autoreToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.autoreToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
             this.autoreToolStripMenuItem1.Text = "Autore";
             this.autoreToolStripMenuItem1.Click += new System.EventHandler(this.autoreToolStripMenuItem1_Click);
             // 
             // studenteToolStripMenuItem
             // 
             this.studenteToolStripMenuItem.Name = "studenteToolStripMenuItem";
-            this.studenteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.studenteToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.studenteToolStripMenuItem.Text = "Studente";
             this.studenteToolStripMenuItem.Click += new System.EventHandler(this.studenteToolStripMenuItem_Click);
             // 
             // grupeToolStripMenuItem
             // 
             this.grupeToolStripMenuItem.Name = "grupeToolStripMenuItem";
-            this.grupeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.grupeToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.grupeToolStripMenuItem.Text = "Grupe";
             this.grupeToolStripMenuItem.Click += new System.EventHandler(this.grupeToolStripMenuItem_Click);
-            // 
-            // closeToolStripMenuItem1
-            // 
-            this.closeToolStripMenuItem1.Name = "closeToolStripMenuItem1";
-            this.closeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.closeToolStripMenuItem1.Text = "&Close";
-            this.closeToolStripMenuItem1.Click += new System.EventHandler(this.closeToolStripMenuItem1_Click);
             // 
             // izvestajiToolStripMenuItem
             // 
             this.izvestajiToolStripMenuItem.Name = "izvestajiToolStripMenuItem";
-            this.izvestajiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.izvestajiToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.izvestajiToolStripMenuItem.Text = "Izvestaji";
             this.izvestajiToolStripMenuItem.Click += new System.EventHandler(this.izvestajiToolStripMenuItem_Click);
             // 
             // webStraniceToolStripMenuItem
             // 
             this.webStraniceToolStripMenuItem.Name = "webStraniceToolStripMenuItem";
-            this.webStraniceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.webStraniceToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.webStraniceToolStripMenuItem.Text = "WebStranice";
             this.webStraniceToolStripMenuItem.Click += new System.EventHandler(this.webStraniceToolStripMenuItem_Click);
+            // 
+            // closeToolStripMenuItem1
+            // 
+            this.closeToolStripMenuItem1.Name = "closeToolStripMenuItem1";
+            this.closeToolStripMenuItem1.Size = new System.Drawing.Size(104, 22);
+            this.closeToolStripMenuItem1.Text = "&Close";
+            this.closeToolStripMenuItem1.Click += new System.EventHandler(this.closeToolStripMenuItem1_Click);
+            // 
+            // dodajBtn
+            // 
+            this.dodajBtn.Location = new System.Drawing.Point(12, 65);
+            this.dodajBtn.Name = "dodajBtn";
+            this.dodajBtn.Size = new System.Drawing.Size(75, 23);
+            this.dodajBtn.TabIndex = 4;
+            this.dodajBtn.Text = "Dodaj";
+            this.dodajBtn.UseVisualStyleBackColor = true;
+            this.dodajBtn.Click += new System.EventHandler(this.dodajBtn_Click);
+            // 
+            // obrisiBtn
+            // 
+            this.obrisiBtn.Location = new System.Drawing.Point(12, 94);
+            this.obrisiBtn.Name = "obrisiBtn";
+            this.obrisiBtn.Size = new System.Drawing.Size(75, 23);
+            this.obrisiBtn.TabIndex = 5;
+            this.obrisiBtn.Text = "Obrisi";
+            this.obrisiBtn.UseVisualStyleBackColor = true;
+            this.obrisiBtn.Click += new System.EventHandler(this.obrisiBtn_Click);
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.Location = new System.Drawing.Point(12, 312);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(75, 23);
+            this.closeBtn.TabIndex = 6;
+            this.closeBtn.Text = "Close";
+            this.closeBtn.UseVisualStyleBackColor = true;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // Form1
             // 
@@ -329,6 +362,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 347);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.closeBtn);
+            this.Controls.Add(this.obrisiBtn);
+            this.Controls.Add(this.dodajBtn);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.listProjekti);
             this.Controls.Add(this.button1);
@@ -380,6 +416,9 @@
         private System.Windows.Forms.ToolStripMenuItem knjigeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izvestajiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem webStraniceToolStripMenuItem;
+        private System.Windows.Forms.Button dodajBtn;
+        private System.Windows.Forms.Button obrisiBtn;
+        private System.Windows.Forms.Button closeBtn;
     }
 }
 

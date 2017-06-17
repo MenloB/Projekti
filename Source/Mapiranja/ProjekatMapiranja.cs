@@ -17,7 +17,7 @@ namespace Source.Mapiranja
             Map(x => x.Zavrsen, "ZAVRSEN");
             Map(x => x.Grupni, "GRUPNI");
 
-            References(x => x.predmet).Column("PREDMET").Cascade.All().LazyLoad();
+            References(x => x.predmet).Column("PREDMET").LazyLoad();
 
             HasManyToMany(x => x.Grupe)
                 .Table("RADI_NA")

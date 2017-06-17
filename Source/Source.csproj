@@ -57,9 +57,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Methods.cs" />
     <Compile Include="DataLayer.cs" />
+    <Compile Include="DodajAutora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajAutora.Designer.cs">
+      <DependentUpon>DodajAutora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodajProjekat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajProjekat.Designer.cs">
+      <DependentUpon>DodajProjekat.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTOManager.cs" />
     <Compile Include="DTOs.cs" />
+    <Compile Include="EditPredmet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPredmet.Designer.cs">
+      <DependentUpon>EditPredmet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditProjekat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProjekat.Designer.cs">
+      <DependentUpon>EditProjekat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entiteti\Autor.cs" />
     <Compile Include="Entiteti\Clanak.cs" />
     <Compile Include="Entiteti\Grupa.cs" />
@@ -94,19 +119,28 @@
     <Compile Include="Mapiranja\StudentMapiranja.cs" />
     <Compile Include="Mapiranja\TeorijskiProjekatMapiranja.cs" />
     <Compile Include="Mapiranja\WebStraniceMapiranja.cs" />
-    <Compile Include="PrikaziPredmet.cs">
+    <Compile Include="DodajRad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PrikaziPredmet.Designer.cs">
-      <DependentUpon>PrikaziPredmet.cs</DependentUpon>
+    <Compile Include="DodajRad.Designer.cs">
+      <DependentUpon>DodajRad.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DodajAutora.resx">
+      <DependentUpon>DodajAutora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajProjekat.resx">
+      <DependentUpon>DodajProjekat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProjekat.resx">
+      <DependentUpon>EditProjekat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PrikaziPredmet.resx">
-      <DependentUpon>PrikaziPredmet.cs</DependentUpon>
+    <EmbeddedResource Include="DodajRad.resx">
+      <DependentUpon>DodajRad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
