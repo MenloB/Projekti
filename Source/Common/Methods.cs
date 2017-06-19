@@ -193,5 +193,25 @@ namespace Source.Common
             listViewItem.SubItems.Add(projekat.predmet.Sifra.ToString());
             Form1.lv.Items.Add(listViewItem);
         }
+
+        public static void SetUpLvIzvestaj()
+        {
+            Form1.lv.Clear();
+            Form1.lv.Columns.Add("ID");
+            Form1.lv.Columns.Add("Opis");
+            Form1.lv.Columns.Add("Datum Podnosenja");
+            Form1.lv.Columns.Add("Za Projekat");
+            Form1.lv.Columns.Add("Podnela Grupa");
+        }
+
+        public static void AddItemsToLvIzvestaj(ListViewItem lvi, Izvestaj izvestaj)
+        {
+            lvi.SubItems.Add(izvestaj.Opis);
+            lvi.SubItems.Add(izvestaj.DatumPodnosenja.Day.ToString() + 
+                "." + izvestaj.DatumPodnosenja.Month + "." + izvestaj.DatumPodnosenja.Year);
+            lvi.SubItems.Add(izvestaj.ZaProjekat.Naziv);
+            lvi.SubItems.Add(izvestaj.PodnelaGrupa.Naziv);
+            Form1.lv.Items.Add(lvi);
+        }
     }
 }

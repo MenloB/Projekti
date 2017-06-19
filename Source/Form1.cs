@@ -55,32 +55,167 @@ namespace Source
                         break;
                     case 2:
                         MessageBox.Show("Profesori Loaded");
+                        int idNastavnika = Int32.Parse(listProjekti.SelectedItems[0].SubItems[0].Text);
+                        PomocniId = idNastavnika;
+                        DTNastavnik nastavnik = DTOManager.GetNastavnik(idNastavnika);
+                        EditNastavnika editNastavnikaForm = new EditNastavnika(nastavnik);
+                        if(editNastavnikaForm.ShowDialog() == DialogResult.OK)
+                        {
+                            DTOManager.UpdateNastavnik(editNastavnikaForm.nastavnik);
+                            IzmeniPodatkeNastavnik();
+                        }
                         break;
                     case 3:
                         MessageBox.Show("Clanci Loaded");
+                        try
+                        {
+                            int idClanak = Int32.Parse(listProjekti.SelectedItems[0].SubItems[0].Text);
+                            PomocniId = idClanak;
+                            DTClanak clanak = DTOManager.GetClanak(idClanak);
+                            EditClanak editClanakForm = new EditClanak(clanak);
+                            if(editClanakForm.ShowDialog() == DialogResult.OK)
+                            {
+                                DTOManager.UpdateClanak(editClanakForm.clanak);
+                                IzmeniPodatkeClanak();
+                            }
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                         break;
                     case 4:
                         MessageBox.Show("Radovi Loaded");
+                        try
+                        {
+                            int idRada = Int32.Parse(listProjekti.SelectedItems[0].SubItems[0].Text);
+                            PomocniId = idRada;
+                            DTRad rad = DTOManager.GetRad(idRada);
+                            EditRad editRadForm = new EditRad(rad);
+                            if(editRadForm.ShowDialog() == DialogResult.OK)
+                            {
+                                DTOManager.UpdateRad(editRadForm.rad);
+                                IzmeniPodatkeRad();
+                            }
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                         break;
                     case 5:
                         MessageBox.Show("Knjige Loaded");
+                        try
+                        {
+                            int idKnjige = Int32.Parse(listProjekti.SelectedItems[0].SubItems[0].Text);
+                            PomocniId = idKnjige;
+                            DTKnjiga knjiga = DTOManager.GetKnjiga(idKnjige);
+                            EditKnjigu editKnjiguForm = new EditKnjigu(knjiga);
+                            if(editKnjiguForm.ShowDialog() == DialogResult.OK)
+                            {
+                                DTOManager.UpdateKnjiga(editKnjiguForm.knjiga);
+                                IzmeniPodatkeKnjiga();
+                            }
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                         break;
                     case 6:
                         MessageBox.Show("Autori Loaded");
+                        try
+                        {
+                            int idAutora = Int32.Parse(listProjekti.SelectedItems[0].SubItems[0].Text);
+                            PomocniId = idAutora;
+                            DTAutor autor = DTOManager.GetAutor(idAutora);
+                            EditAutora editAutoraForm = new EditAutora(autor);
+                            if(editAutoraForm.ShowDialog() == DialogResult.OK)
+                            {
+                                DTOManager.UpdateAutor(editAutoraForm.autor);
+                                IzmeniPodatkeAutor();
+                            }
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                         break;
                     case 7:
                         MessageBox.Show("Studenti Loaded");
+                        try
+                        {
+                            int idStudenta = Int32.Parse(listProjekti.SelectedItems[0].SubItems[0].Text);
+                            PomocniId = idStudenta;
+                            DTStudent student = DTOManager.GetStudent(idStudenta);
+                            EditStudenta editStudentaForm = new EditStudenta(student);
+                            if(editStudentaForm.ShowDialog() == DialogResult.OK)
+                            {
+                                DTOManager.UpdateStudenta(editStudentaForm.student);
+                                IzmeniPodatkeStudent();
+                            }
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                         break;
                     case 8:
                         //this is where I need to have some kind of local list
                         //so I can list every project that Group works on
                         MessageBox.Show("Grupe Loaded");
+                        try
+                        {
+                            int idGrupa = Int32.Parse(listProjekti.SelectedItems[0].SubItems[0].Text);
+                            PomocniId = idGrupa;
+                            DTGrupa grupa = DTOManager.GetGrupa(idGrupa);
+                            EditGrupu editGrupaForm = new EditGrupu(grupa);
+                            if(editGrupaForm.ShowDialog() == DialogResult.OK)
+                            {
+                                DTOManager.UpdateGrupa(editGrupaForm.grupa);
+                                IzmeniPodatkeGrupa();
+                            }
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                         break;
                     case 9:
                         MessageBox.Show("Izvestaji Loaded");
+                        try
+                        {
+                            int idIzvestaja = Int32.Parse(listProjekti.SelectedItems[0].SubItems[0].Text);
+                            DTIzvestaj izvestaj = DTOManager.GetIzvestaj(idIzvestaja);
+                            EditIzvestaj editIzvestaj = new EditIzvestaj(izvestaj);
+                            if (editIzvestaj.ShowDialog() == DialogResult.OK)
+                            {
+                                DTOManager.UpdateIzvestaj(editIzvestaj.izvestaj);
+                                IzmeniPodatkeWebStranica();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                         break;
                     case 10:
                         MessageBox.Show("Web Stranice Loaded");
+                        try
+                        {
+                            int idWebStranice = Int32.Parse(listProjekti.SelectedItems[0].SubItems[0].Text);
+                            DTWebStranice stranice = DTOManager.GetStranicu(idWebStranice);
+                            EditWebStranicu editWebStranicuForm = new EditWebStranicu(stranice);
+                            if (editWebStranicuForm.ShowDialog() == DialogResult.OK)
+                            {
+                                DTOManager.UpdateWebStranicu(editWebStranicuForm.stranice);
+                                IzmeniPodatkeWebStranica();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                         break;
                 }
             }
@@ -95,6 +230,46 @@ namespace Source
             //MessageBox.Show(id);
             //PrikaziPredmet prikaziPredmet = new PrikaziPredmet(Int32.Parse(id));
             //prikaziPredmet.Show();
+        }
+
+        private void IzmeniPodatkeWebStranica()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void IzmeniPodatkeGrupa()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void IzmeniPodatkeStudent()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void IzmeniPodatkeAutor()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void IzmeniPodatkeKnjiga()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void IzmeniPodatkeRad()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void IzmeniPodatkeClanak()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void IzmeniPodatkeNastavnik()
+        {
+            throw new NotImplementedException();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -314,20 +489,17 @@ namespace Source
             this.LastLoadedData = 9;
             ISession s = DataLayer.GetSession();
             IList<Izvestaj> izvestaji = s.QueryOver<Izvestaj>().List<Izvestaj>();
+            ListViewItem lvi;
 
-            if(izvestaji.Count == 0)
-            {
-                MessageBox.Show("Nema izvestaja");
-            } else
-            {
-                MessageBox.Show("Ima izvestaja");
-            }
+            Common.Methods.SetUpLvIzvestaj();
 
             foreach(Izvestaj izvestaj in izvestaji)
             {
-                MessageBox.Show(izvestaj.Opis);
+                lvi = new ListViewItem(izvestaj.Id.ToString());
+                Common.Methods.AddItemsToLvIzvestaj(lvi, izvestaj);
             }
 
+            listProjekti = lv;
             s.Close();
         }
 
@@ -370,13 +542,55 @@ namespace Source
                     dp.ShowDialog();
                     listProjekti.Refresh();
                     break;
+                case 1:
+                    DodajPredmet dodajPredmet = new DodajPredmet();
+                    dodajPredmet.ShowDialog();
+                    listProjekti.Refresh();
+                    break;
+                case 2:
+                    DodajNastavnika dn = new DodajNastavnika();
+                    dn.ShowDialog();
+                    listProjekti.Refresh();
+                    break;
+                case 3:
+                    DodajClanak dc = new DodajClanak();
+                    dc.ShowDialog();
+                    listProjekti.Refresh();
+                    break;
                 case 4:
                     DodajRad dr = new DodajRad();
                     dr.ShowDialog();
+                    listProjekti.Refresh();
+                    break;
+                case 5:
+                    DodajKnjigu dk = new DodajKnjigu();
+                    dk.ShowDialog();
+                    listProjekti.Refresh();
                     break;
                 case 6:
                     DodajAutora da = new DodajAutora();
                     da.ShowDialog();
+                    listProjekti.Refresh();
+                    break;
+                case 7:
+                    DodajStudenta dodajStudenta = new DodajStudenta();
+                    dodajStudenta.ShowDialog();
+                    listProjekti.Refresh();
+                    break;
+                case 8:
+                    DodajGrupu dodajGrupu = new DodajGrupu();
+                    dodajGrupu.ShowDialog();
+                    listProjekti.Refresh();
+                    break;
+                case 9:
+                    DodajIzvestaj di = new DodajIzvestaj();
+                    di.ShowDialog();
+                    listProjekti.Refresh();
+                    break;
+                case 10:
+                    DodajWebStranicu dodajWeb = new DodajWebStranicu();
+                    dodajWeb.ShowDialog();
+                    listProjekti.Refresh();
                     break;
             }
         }

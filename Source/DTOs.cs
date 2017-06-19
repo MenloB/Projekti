@@ -52,6 +52,40 @@ namespace Source
         }
     }
 
+    public class DTTeorijskiProjekat : DTProjekat
+    {
+        public virtual int BrojStranaProjekta { get; set; }
+        
+        //public virtual IList<DTLiteratura> ProjekatLiteratura { get; set; }
+
+        public DTTeorijskiProjekat()
+        {
+        }
+
+        public DTTeorijskiProjekat(int ProjekatId, int BrojStranaProjekta)
+        {
+            this.ProjekatId = ProjekatId;
+            this.BrojStranaProjekta = BrojStranaProjekta;
+        }
+    }
+
+    public class DTPrakticniProjekat : DTProjekat
+    {
+        public virtual String KratakOpisProjekta { get; set; }
+        public virtual String JezikProjekta { get; set; }
+
+        public DTPrakticniProjekat()
+        {
+        }
+
+        public DTPrakticniProjekat(int ProjekatId, String KratakOpisProjekta, String JezikProjekta)
+        {
+            this.ProjekatId = ProjekatId;
+            this.KratakOpisProjekta = KratakOpisProjekta;
+            this.JezikProjekta = JezikProjekta;
+        }
+    }
+
     public class DTLiteratura
     {
         public virtual int LiteraturaId { get; set; }
@@ -76,6 +110,168 @@ namespace Source
             this.RadFormat       = RadFormat;
             this.RadKonferencija = RadKonferencija;
             this.RadAdresa       = RadAdresa;
+        }
+    }
+
+    public class DTClanak : DTLiteratura
+    {
+        public virtual String ClanakNaziv { get; set; }
+        public virtual String ClanakISSN { get; set; }
+        public virtual int ClanakGodina { get; set; }
+        public virtual String CasopisNaziv { get; set; }
+        public virtual int CasopisBroj { get; set; }
+
+        public DTClanak()
+        {
+        }
+
+        public DTClanak(int ClanakId, String ClanakNaziv, String ClanakISSN, int ClanakGodina, String CasopisNaziv, int CasopisBroj)
+        {
+            this.LiteraturaId = ClanakId;
+            this.ClanakNaziv = ClanakNaziv;
+            this.ClanakISSN = ClanakISSN;
+            this.ClanakGodina = ClanakGodina;
+            this.CasopisNaziv = CasopisNaziv;
+            this.CasopisBroj = CasopisBroj;
+        }
+    }
+
+    public class DTKnjiga : DTLiteratura
+    {
+        public virtual String KnjigaISBN { get; set; }
+        public virtual String KnjigaNaslov { get; set; }
+        public virtual String KnjigaIzdavac { get; set; }
+        public virtual int KnjigaGodina { get; set; }
+
+        public DTKnjiga()
+        {
+        }
+
+        public DTKnjiga(int KnjigaId, String KnjigaISBN, String KnjigaNaslov, String KnjigaIzdavac, int KnjigaGodina)
+        {
+            this.LiteraturaId = KnjigaId;
+            this.KnjigaISBN = KnjigaISBN;
+            this.KnjigaNaslov = KnjigaNaslov;
+            this.KnjigaIzdavac = KnjigaIzdavac;
+            this.KnjigaGodina = KnjigaGodina;
+        }
+    }
+
+    public class DTAutor
+    {
+        public virtual int AutorId { get; set; }
+        public virtual String AutorIme { get; set; }
+        public virtual String AutorSIme { get; set; }
+        public virtual String AutorPrezime { get; set; }
+
+        public DTAutor()
+        {
+        }
+
+        public DTAutor(int AutorId, String AutorIme, String AutorSIme, String AutorPrezime)
+        {
+            this.AutorId = AutorId;
+            this.AutorIme = AutorIme;
+            this.AutorSIme = AutorSIme;
+            this.AutorPrezime = AutorPrezime;
+        }
+    }
+
+    public class DTNastavnik
+    {
+        public virtual int NastavnikId { get; set; }
+        public virtual String NastavnikIme { get; set; }
+        public virtual String NastavnikSIme { get; set; }
+        public virtual String NastavnikPrezime { get; set; }
+
+        public DTNastavnik()
+        {
+        }
+
+        public DTNastavnik(int NastavnikId, String NastavnikIme, String NastavnikSIme, String NastavnikPrezime)
+        {
+            this.NastavnikId = NastavnikId;
+            this.NastavnikIme = NastavnikIme;
+            this.NastavnikSIme = NastavnikSIme;
+            this.NastavnikPrezime = NastavnikPrezime;
+        }
+
+    }
+
+    public class DTStudent
+    {
+        public virtual int StudentId { get; set; }
+        public virtual String StudentIme { get; set; }
+        public virtual String StudentSIme { get; set; }
+        public virtual String StudentPrezime { get; set; }
+        public virtual int StudentBrInd { get; set; }
+        public virtual String StudentSmer { get; set; }
+        
+        public DTStudent()
+        {
+        }
+
+        public DTStudent(int StudentId, String StudentIme, String StudentSIme, String StudentPrezime,
+            int StudentBrInd, String StudentSmer)
+        {
+            this.StudentId = StudentId;
+            this.StudentIme = StudentIme;
+            this.StudentSIme = StudentSIme;
+            this.StudentPrezime = StudentPrezime;
+            this.StudentBrInd = StudentBrInd;
+            this.StudentSmer = StudentSmer;
+        }
+    }
+
+    public class DTGrupa
+    {
+        public virtual int GrupaID { get; set; }
+        public virtual String GrupaNaziv { get; set; }
+        
+        public DTGrupa()
+        {
+        }
+
+        public DTGrupa(int GrupaID, String GrupaNaziv)
+        {
+            this.GrupaID = GrupaID;
+            this.GrupaNaziv = GrupaNaziv;
+        }
+    }
+
+    public class DTIzvestaj
+    {
+        public virtual int IzvestajId { get; set; }
+        public virtual String IzvestajOpis { get; set; }
+        public virtual DateTime IzvestajDatum { get; set; }
+        
+        public DTIzvestaj()
+        {
+        }
+
+        public DTIzvestaj(int IzvestajId, String IzvestajOpis, DateTime IzvestajDatum)
+        {
+            this.IzvestajId = IzvestajId;
+            this.IzvestajOpis = IzvestajOpis;
+            this.IzvestajDatum = IzvestajDatum;
+        }
+    }
+
+    public class DTWebStranice
+    {
+        public virtual int WebStraniceId { get; set; }
+        public virtual String WebLink { get; set; }
+        
+        //public virtual DTProjekat WebStranicaPripadaProjektu { get; set; }
+
+        public DTWebStranice()
+        {
+        }
+
+        public DTWebStranice(int WebStraniceId, String WebLink)
+        {
+            this.WebStraniceId = WebStraniceId;
+            this.WebLink = WebLink;
         }
     }
 }

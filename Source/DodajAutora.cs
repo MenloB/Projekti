@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NHibernate;
-using Source.Common;
 using Source.Entiteti;
 
 namespace Source
@@ -22,7 +14,7 @@ namespace Source
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Methods.closeApplication();
+            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,6 +27,8 @@ namespace Source
 
             s.Save(autor);
             s.Close();
+
+            Close();
         }
     }
 }

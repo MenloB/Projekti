@@ -120,6 +120,30 @@ namespace Source
             return pred;
         }
 
+        public static void UpdateClanak(DTClanak clanak)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static DTClanak GetClanak(int idClanak)
+        {
+            DTClanak clanak = new DTClanak();
+
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                Clanak c = session.Load<Clanak>(idClanak);
+
+                clanak = new DTClanak(c.Id, c.Naziv, c.ISSN, c.Godina, c.NazivCasopisa, c.BrojCasopisa);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return clanak;
+        }
+
         public static List<DTPredmet> GetPredmete()
         {
             List<DTPredmet> predmeti = new List<DTPredmet>();
@@ -159,6 +183,30 @@ namespace Source
             return DtRad;
         }
 
+        public static DTKnjiga GetKnjiga(int idKnjige)
+        {
+            DTKnjiga knjiga = new DTKnjiga();
+
+            try
+            {
+                ISession s = DataLayer.GetSession();
+                Knjiga k = s.Load<Knjiga>(idKnjige);
+
+                knjiga = new DTKnjiga(k.Id, k.ISBN, k.Naslov, k.Izdavac, k.Godina);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return knjiga;
+        }
+
+        internal static void UpdateKnjiga(DTKnjiga knjiga)
+        {
+            throw new NotImplementedException();
+        }
+
         public static DTRad UpdateRad(DTRad dr)
         {
             try
@@ -182,6 +230,30 @@ namespace Source
             return dr;
         }
 
+        public static DTAutor GetAutor(int idAutora)
+        {
+            DTAutor autor = new DTAutor();
+
+            try
+            {
+                ISession s = DataLayer.GetSession();
+                Autor a = s.Load<Autor>(idAutora);
+
+                autor = new DTAutor(a.Id, a.Ime, a.SIme, a.Prezime);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return autor;
+        }
+
+        internal static void UpdateAutor(object autor)
+        {
+            throw new NotImplementedException();
+        }
+
         public static List<DTRad> GetRadove()
         {
             List<DTRad> radovi = new List<DTRad>();
@@ -203,6 +275,159 @@ namespace Source
             }
 
             return radovi;
+        }
+
+        public static DTStudent GetStudent(int idStudenta)
+        {
+            DTStudent student = new DTStudent();
+
+            try
+            {
+                ISession s = DataLayer.GetSession();
+                Student stud = s.Load<Student>(idStudenta);
+
+                student = new DTStudent(stud.Id, stud.Ime, stud.SIme, stud.Prezime, stud.BrIndeksa, stud.Smer);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return student;
+        }
+
+        internal static void UpdateStudenta(object student)
+        {
+            throw new NotImplementedException();
+        }
+
+        //DTOManager Methods for Nastavnik
+        public static void UpdateNastavnik(DTNastavnik nastavnik)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+                Nastavnik n = s.Load<Nastavnik>(nastavnik.NastavnikId);
+                n.Ime = nastavnik.NastavnikIme;
+                n.SIme = nastavnik.NastavnikSIme;
+                n.Prezime = nastavnik.NastavnikPrezime;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        internal static void UpdateIzvestaj(DTIzvestaj izvestaj)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static DTIzvestaj GetIzvestaj(int idIzvestaja)
+        {
+            DTIzvestaj izvestajDT = new DTIzvestaj();
+            try
+            {
+                ISession s = DataLayer.GetSession();
+                Izvestaj izvestaj = s.Load<Izvestaj>(idIzvestaja);
+
+                izvestajDT = new DTIzvestaj(izvestaj.Id, izvestaj.Opis, izvestaj.DatumPodnosenja);
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return izvestajDT;
+        }
+
+        internal static void UpdateWebStranicu(DTWebStranice webStranicu)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static DTWebStranice GetStranicu(int idWebStranice)
+        {
+            DTWebStranice webStranica = new DTWebStranice();
+            try
+            {
+                ISession s = DataLayer.GetSession();
+                WebStranice stranica = s.Load<WebStranice>(idWebStranice);
+
+                webStranica = new DTWebStranice(stranica.Id, stranica.Link);
+                s.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return webStranica;
+        }
+
+        public static DTNastavnik GetNastavnik(int idNastavnika)
+        {
+            DTNastavnik nastavnik = new DTNastavnik();
+            try
+            {
+                ISession s = DataLayer.GetSession();
+                Nastavnik n = s.Load<Nastavnik>(idNastavnika);
+
+                nastavnik = new DTNastavnik(n.Id, n.Ime, n.SIme, n.Prezime);
+                s.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return nastavnik;
+        }
+
+        public static void UpdateGrupa(object grupa)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static DTGrupa GetGrupa(int idGrupa)
+        {
+            DTGrupa grupa = new DTGrupa();
+
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                Grupa g = session.Load<Grupa>(idGrupa);
+
+                grupa = new DTGrupa(g.Id, g.Naziv);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return grupa;
+        }
+
+        public static List<DTNastavnik> GetNastavnike()
+        {
+            List<DTNastavnik> nastavnici = new List<DTNastavnik>();
+
+            try
+            {
+                ISession session = DataLayer.GetSession();
+                IList<Nastavnik> ucitaniNastavnici = session.QueryOver<Nastavnik>()
+                                                            .List<Nastavnik>();
+
+                foreach(Nastavnik nastavnik in ucitaniNastavnici)
+                {
+                    nastavnici.Add(new DTNastavnik(nastavnik.Id, nastavnik.Ime, nastavnik.SIme, nastavnik.Prezime));
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return nastavnici;
         }
     }
 }

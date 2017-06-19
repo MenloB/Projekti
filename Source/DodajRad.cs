@@ -54,10 +54,12 @@ namespace Source
                 rad.Format = "PDF";
             else if (radioButton2.Checked == true)
                 rad.Format = "WORD";
-            else
+            else if (radioButton3.Checked == true)
                 rad.Format = "POST-SCRIPT";
+            else
+                MessageBox.Show("Odaberite format rada.");
 
-            s.SaveOrUpdate(rad);
+            s.Save(rad);
             s.Flush();
             s.Close();
         }
@@ -66,6 +68,11 @@ namespace Source
         {
             Autor autor = comboBox1.SelectedItem as Autor;
             comboBox1.Text = autor.Ime + " " + autor.Prezime;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

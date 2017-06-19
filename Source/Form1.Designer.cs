@@ -39,13 +39,6 @@
             this.projekatGrupni = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.projekatPredmet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ucitajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.predmeteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nastavnikeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.autoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.literaturuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projekteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -136,63 +129,14 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ucitajToolStripMenuItem,
-            this.toolStripSeparator1,
             this.closeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 54);
-            // 
-            // ucitajToolStripMenuItem
-            // 
-            this.ucitajToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.predmeteToolStripMenuItem,
-            this.nastavnikeToolStripMenuItem,
-            this.autoreToolStripMenuItem,
-            this.literaturuToolStripMenuItem,
-            this.projekteToolStripMenuItem});
-            this.ucitajToolStripMenuItem.Name = "ucitajToolStripMenuItem";
-            this.ucitajToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.ucitajToolStripMenuItem.Text = "Ucitaj";
-            // 
-            // predmeteToolStripMenuItem
-            // 
-            this.predmeteToolStripMenuItem.Name = "predmeteToolStripMenuItem";
-            this.predmeteToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.predmeteToolStripMenuItem.Text = "Predmete";
-            // 
-            // nastavnikeToolStripMenuItem
-            // 
-            this.nastavnikeToolStripMenuItem.Name = "nastavnikeToolStripMenuItem";
-            this.nastavnikeToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.nastavnikeToolStripMenuItem.Text = "Nastavnike";
-            // 
-            // autoreToolStripMenuItem
-            // 
-            this.autoreToolStripMenuItem.Name = "autoreToolStripMenuItem";
-            this.autoreToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.autoreToolStripMenuItem.Text = "Autore";
-            // 
-            // literaturuToolStripMenuItem
-            // 
-            this.literaturuToolStripMenuItem.Name = "literaturuToolStripMenuItem";
-            this.literaturuToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.literaturuToolStripMenuItem.Text = "Literaturu";
-            // 
-            // projekteToolStripMenuItem
-            // 
-            this.projekteToolStripMenuItem.Name = "projekteToolStripMenuItem";
-            this.projekteToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.projekteToolStripMenuItem.Text = "Projekte";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(101, 6);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.closeToolStripMenuItem.Text = "&Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -392,13 +336,6 @@
         private System.Windows.Forms.ColumnHeader projekatGrupni;
         private System.Windows.Forms.ColumnHeader projekatPredmet;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ucitajToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem predmeteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nastavnikeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem autoreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem literaturuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem projekteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;

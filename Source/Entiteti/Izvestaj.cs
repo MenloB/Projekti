@@ -12,7 +12,7 @@ namespace Source.Entiteti
         public virtual String Opis { get; set; }
         public virtual DateTime DatumPodnosenja { get; set; }
 
-        public virtual Projekat ZaProjekat { get; set; }
+        public virtual PrakticniProjekat ZaProjekat { get; set; }
         public virtual Grupa PodnelaGrupa { get; set; }
     }
 }

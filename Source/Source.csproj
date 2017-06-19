@@ -65,14 +65,98 @@
     <Compile Include="DodajAutora.Designer.cs">
       <DependentUpon>DodajAutora.cs</DependentUpon>
     </Compile>
+    <Compile Include="DodajClanak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajClanak.Designer.cs">
+      <DependentUpon>DodajClanak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodajGrupu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajGrupu.Designer.cs">
+      <DependentUpon>DodajGrupu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodajIzvestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajIzvestaj.Designer.cs">
+      <DependentUpon>DodajIzvestaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodajKnjigu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajKnjigu.Designer.cs">
+      <DependentUpon>DodajKnjigu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodajNastavnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajNastavnika.Designer.cs">
+      <DependentUpon>DodajNastavnika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodajPredmet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajPredmet.Designer.cs">
+      <DependentUpon>DodajPredmet.cs</DependentUpon>
+    </Compile>
     <Compile Include="DodajProjekat.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DodajProjekat.Designer.cs">
       <DependentUpon>DodajProjekat.cs</DependentUpon>
     </Compile>
+    <Compile Include="DodajStudenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajStudenta.Designer.cs">
+      <DependentUpon>DodajStudenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodajWebStranicu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajWebStranicu.Designer.cs">
+      <DependentUpon>DodajWebStranicu.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTOManager.cs" />
     <Compile Include="DTOs.cs" />
+    <Compile Include="EditAutora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditAutora.Designer.cs">
+      <DependentUpon>EditAutora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditClanak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditClanak.Designer.cs">
+      <DependentUpon>EditClanak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditGrupu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditGrupu.Designer.cs">
+      <DependentUpon>EditGrupu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditIzvestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditIzvestaj.Designer.cs">
+      <DependentUpon>EditIzvestaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditKnjigu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditKnjigu.Designer.cs">
+      <DependentUpon>EditKnjigu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditNastavnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditNastavnika.Designer.cs">
+      <DependentUpon>EditNastavnika.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditPredmet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +168,24 @@
     </Compile>
     <Compile Include="EditProjekat.Designer.cs">
       <DependentUpon>EditProjekat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditRad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditRad.Designer.cs">
+      <DependentUpon>EditRad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditStudenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditStudenta.Designer.cs">
+      <DependentUpon>EditStudenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditWebStranicu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditWebStranicu.Designer.cs">
+      <DependentUpon>EditWebStranicu.cs</DependentUpon>
     </Compile>
     <Compile Include="Entiteti\Autor.cs" />
     <Compile Include="Entiteti\Clanak.cs" />
@@ -130,11 +232,65 @@
     <EmbeddedResource Include="DodajAutora.resx">
       <DependentUpon>DodajAutora.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DodajClanak.resx">
+      <DependentUpon>DodajClanak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajGrupu.resx">
+      <DependentUpon>DodajGrupu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajIzvestaj.resx">
+      <DependentUpon>DodajIzvestaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajKnjigu.resx">
+      <DependentUpon>DodajKnjigu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajNastavnika.resx">
+      <DependentUpon>DodajNastavnika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajPredmet.resx">
+      <DependentUpon>DodajPredmet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DodajProjekat.resx">
       <DependentUpon>DodajProjekat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DodajStudenta.resx">
+      <DependentUpon>DodajStudenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajWebStranicu.resx">
+      <DependentUpon>DodajWebStranicu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditAutora.resx">
+      <DependentUpon>EditAutora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditClanak.resx">
+      <DependentUpon>EditClanak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditGrupu.resx">
+      <DependentUpon>EditGrupu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditIzvestaj.resx">
+      <DependentUpon>EditIzvestaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditKnjigu.resx">
+      <DependentUpon>EditKnjigu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditNastavnika.resx">
+      <DependentUpon>EditNastavnika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPredmet.resx">
+      <DependentUpon>EditPredmet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditProjekat.resx">
       <DependentUpon>EditProjekat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditRad.resx">
+      <DependentUpon>EditRad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditStudenta.resx">
+      <DependentUpon>EditStudenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditWebStranicu.resx">
+      <DependentUpon>EditWebStranicu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
