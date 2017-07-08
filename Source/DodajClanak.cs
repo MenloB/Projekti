@@ -69,15 +69,41 @@ namespace Source
                                              where p.Tip == "TEORIJSKI"
                                              select p;
 
-            foreach (Autor autor in autori)
+            IList<Projekat> Projekti = new List<Projekat>();
+
+
+            foreach(var item in projekti)
             {
-                comboBox1.Items.Add(autor);
+                Projekti.Add(item);
             }
 
-            foreach (Projekat projekat in projekti)
+            comboBox1.DataSource = autori;
+            comboBox1.DisplayMember = "Prezime";
+            comboBox1.ValueMember = null;
+
+            if(comboBox1.SelectedValue != null)
             {
-                comboBox2.Items.Add(projekat);
+                Autor obelezeniAutor = (Autor)comboBox1.SelectedValue;
             }
+
+            comboBox2.DataSource = Projekti;
+            comboBox2.DisplayMember = "Naziv";
+            comboBox2.ValueMember = null;
+
+            if (comboBox2.SelectedValue != null)
+            {
+                Projekat obelezeniProjekat = (Projekat)comboBox2.SelectedValue;
+            }
+
+            //foreach (Autor autor in autori)
+            //{
+            //    comboBox1.Items.Add(autor);
+            //}
+
+            //foreach (Projekat projekat in projekti)
+            //{
+            //    comboBox2.Items.Add(projekat);
+            //}
 
             s.Close();
         }

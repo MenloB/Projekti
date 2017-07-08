@@ -19,8 +19,8 @@ namespace Source.Mapiranja
             Map(x => x.Opis, "OPIS");
             Map(x => x.DatumPodnosenja, "DATUM_PODNOSENJA");
 
-            References(x => x.ZaProjekat).Column("PROJEKAT").Cascade.All().LazyLoad();
-            References(x => x.PodnelaGrupa).Column("GRUPA").Cascade.All().LazyLoad();
+            References(x => x.ZaProjekat).Column("PROJEKAT").LazyLoad();
+            References(x => x.PodnelaGrupa).Column("GRUPA").LazyLoad();
         }
     }
 }

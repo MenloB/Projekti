@@ -63,17 +63,38 @@ namespace Source
             ISession s = DataLayer.GetSession();
             IList<Predmet> predmeti = s.QueryOver<Predmet>().List<Predmet>();
 
-            foreach (Predmet predmet in predmeti)
+            comboBox1.DataSource = predmeti;
+            comboBox1.DisplayMember = "Naziv";
+            comboBox1.ValueMember = null;
+
+            if(comboBox1.SelectedValue != null)
             {
-                comboBox1.Items.Add(predmet);
+                Predmet testPredmet = (Predmet)comboBox1.SelectedValue;
+                MessageBox.Show(testPredmet.Naziv);
             }
+
+            //foreach (Predmet predmet in predmeti)
+            //{
+            //    comboBox1.DisplayMember = predmet.Naziv;
+            //    comboBox1.ValueMember = predmet.Naziv;
+            //}
 
             IList<Grupa> grupe = s.QueryOver<Grupa>().List<Grupa>();
 
-            foreach(Grupa grupa in grupe)
+            comboBox2.DataSource = grupe;
+            comboBox2.DisplayMember = "Naziv";
+            comboBox2.ValueMember = null;
+
+            if(comboBox2.SelectedValue != null)
             {
-                comboBox2.Items.Add(grupa);
+                Grupa obelezenaGrupa = (Grupa)comboBox2.SelectedValue;
+                MessageBox.Show(obelezenaGrupa.Naziv);
             }
+
+            //foreach(Grupa grupa in grupe)
+            //{
+            //    comboBox2.Items.Add(grupa);
+            //}
 
             s.Close();
         }

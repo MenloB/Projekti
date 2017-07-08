@@ -26,10 +26,19 @@ namespace Source
             ISession s = DataLayer.GetSession();
             IList<Autor> autori = s.QueryOver<Autor>().List<Autor>();
 
-            foreach(Autor autor in autori)
+            comboBox1.DataSource = autori;
+            comboBox1.DisplayMember = "Prezime";
+            comboBox1.ValueMember = null;
+
+            if(comboBox1.SelectedValue != null)
             {
-                comboBox1.Items.Add(autor);
+                Autor obelezeniAutor = (Autor)comboBox1.SelectedValue;
             }
+
+            //foreach(Autor autor in autori)
+            //{
+            //    comboBox1.Items.Add(autor);
+            //}
 
             s.Close();
         }

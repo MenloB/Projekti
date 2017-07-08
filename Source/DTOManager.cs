@@ -424,7 +424,7 @@ namespace Source
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
 
             return nastavnici;

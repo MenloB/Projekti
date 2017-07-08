@@ -24,10 +24,19 @@ namespace Source
             ISession s = DataLayer.GetSession();
             IList<Predmet> predmeti = s.QueryOver<Predmet>().List<Predmet>();
 
-            foreach(Predmet predmet in predmeti)
+            comboBox1.DataSource = predmeti;
+            comboBox1.DisplayMember = "Naziv";
+            comboBox1.ValueMember = null;
+
+            if(comboBox1.SelectedValue != null)
             {
-                comboBox1.Items.Add(predmet);
+                Predmet odabraniPredmet = (Predmet)comboBox1.SelectedValue;
             }
+
+            //foreach(Predmet predmet in predmeti)
+            //{
+            //    comboBox1.Items.Add(predmet);
+            //}
 
             s.Close();
         }
@@ -46,7 +55,7 @@ namespace Source
             n.SIme    = textBox2.Text;
             n.Prezime = textBox3.Text;
 
-            n.Predmeti.Add((Predmet) comboBox1.SelectedItem);
+            n.Predmeti.Add((Predaje) comboBox1.SelectedItem);
 
             s.Save(n);
             s.Flush();

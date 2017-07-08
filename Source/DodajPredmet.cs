@@ -33,7 +33,7 @@ namespace Source
             p.Katedra = textBox2.Text;
             p.Semestar = textBox3.Text;
 
-            p.Profesori.Add((Nastavnik)comboBox1.SelectedItem);
+            p.Profesori.Add((Predaje)comboBox1.SelectedItem);
 
             s.Save(p);
             s.Flush();

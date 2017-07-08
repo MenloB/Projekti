@@ -15,6 +15,8 @@ namespace Source.Mapiranja
             Map(x => x.SIme, "S_IME");
             Map(x => x.Prezime, "PREZIME");
 
+            //HasMany(x => x.Predmeti).KeyColumn("SIFRA").Cascade.All().LazyLoad();
+
             HasManyToMany(x => x.Predmeti)
                 .Table("PREDAJE")
                 .ParentKeyColumn("OSOBA")

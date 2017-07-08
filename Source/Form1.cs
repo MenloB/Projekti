@@ -277,6 +277,16 @@ namespace Source
             // Projects loaded
             this.LastLoadedData = 0;
             LoadProjekteInfos();
+
+            ISession s = DataLayer.GetSession();
+            IList<Predaje> nastavnici = s.QueryOver<Predaje>().List<Predaje>();
+
+            foreach(Predaje predaje in nastavnici)
+            {
+                MessageBox.Show(predaje.Profesor.Ime);
+            }
+
+            s.Close();
         }
 
         //Menu Strip buttons
@@ -540,27 +550,27 @@ namespace Source
                 case 0:
                     DodajProjekat dp = new DodajProjekat();
                     dp.ShowDialog();
-                    listProjekti.Refresh();
+                    UpdateListView();
                     break;
                 case 1:
                     DodajPredmet dodajPredmet = new DodajPredmet();
                     dodajPredmet.ShowDialog();
-                    listProjekti.Refresh();
+                    UpdateListView();
                     break;
                 case 2:
                     DodajNastavnika dn = new DodajNastavnika();
                     dn.ShowDialog();
-                    listProjekti.Refresh();
+                    UpdateListView();
                     break;
                 case 3:
                     DodajClanak dc = new DodajClanak();
                     dc.ShowDialog();
-                    listProjekti.Refresh();
+                    UpdateListView();
                     break;
                 case 4:
                     DodajRad dr = new DodajRad();
                     dr.ShowDialog();
-                    listProjekti.Refresh();
+                    UpdateListView();
                     break;
                 case 5:
                     DodajKnjigu dk = new DodajKnjigu();
@@ -711,11 +721,13 @@ namespace Source
                     break;
                 case 9: // Izvestaji
                     _session = DataLayer.GetSession();
+                    //ITransaction t = _session.BeginTransaction();
                     Izvestaj i = _session.Load<Izvestaj>(Int32.Parse(listProjekti.SelectedItems[0].SubItems[0].Text));
                     MessageBox.Show(i.Opis);
                     _session.Delete(i);
                     _session.Flush();
                     _session.Close();
+                    UpdateListViewIzvestaji();
                     break;
                 case 10: // Web Stranice
                     _session = DataLayer.GetSession();
@@ -758,6 +770,146 @@ namespace Source
         }
 
         //Other supporting functions
+        private void UpdateListView()
+        {
+            ISession s;
+            ListViewItem lvi;
+
+            switch (this.LastLoadedData)
+            {
+                case 0:
+                    try
+                    {
+                        s = DataLayer.GetSession();
+                        IList<Projekat> projekti = s.QueryOver<Projekat>().List<Projekat>();
+                        Common.Methods.SetUpLvProjekat();
+                        listProjekti.Items.Clear();
+
+                        foreach (Projekat projekat in projekti)
+                        {
+                            lvi = new ListViewItem(projekat.Id.ToString());
+                            Common.Methods.AddItemsToLvProjekat(lvi, projekat);
+                        }
+
+                        s.Close();
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    break;
+
+                case 1:
+                    try
+                    {
+                        s = DataLayer.GetSession();
+                        IList<Predmet> predmeti = s.QueryOver<Predmet>().List<Predmet>();
+                        Common.Methods.SetUpLvPredmet();
+                        listProjekti.Items.Clear();
+
+                        foreach (Predmet predmet in predmeti)
+                        {
+                            lvi = new ListViewItem(predmet.Sifra.ToString());
+                            Common.Methods.AddItemsToLvPredmet(lvi, predmet);
+                        }
+
+                        s.Close();
+                    }
+                    catch(Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+                    break;
+
+                case 2:
+                    try
+                    {
+                        s = DataLayer.GetSession();
+                        IList<Nastavnik> nastavnici = s.QueryOver<Nastavnik>().List<Nastavnik>();
+                        Common.Methods.SetUpLvNastavnik();
+                        listProjekti.Items.Clear();
+
+                        foreach (Nastavnik nastavnik in nastavnici)
+                        {
+                            lvi = new ListViewItem(nastavnik.Id.ToString());
+                            Common.Methods.AddItemsToLvNastavnik(lvi, nastavnik);
+                        }
+
+                        s.Close();
+                    }
+                    catch(Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+                    break;
+
+                case 3:
+                    try
+                    {
+                        s = DataLayer.GetSession();
+                        IList<Clanak> clanci = s.QueryOver<Clanak>().List<Clanak>();
+                        Common.Methods.SetUpLvClanak();
+                        listProjekti.Items.Clear();
+
+                        foreach(Clanak clanak in clanci)
+                        {
+                            lvi = new ListViewItem(clanak.Id.ToString());
+                            Common.Methods.AddItemsToLvClanak(lvi, clanak);
+                        }
+
+                        s.Close();
+                    }
+                    catch(Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+                    break;
+
+                case 4:
+                    break;
+
+                case 5:
+                    break;
+
+                case 6:
+                    break;
+
+                case 7:
+                    break;
+
+                case 8:
+                    break;
+
+                case 9:
+                    try
+                    {
+                        s = DataLayer.GetSession();
+                        IList<Izvestaj> izvestaji = s.QueryOver<Izvestaj>().List<Izvestaj>();
+                        listProjekti.Items.Clear();
+                        Common.Methods.SetUpLvIzvestaj();
+                        
+                        foreach (Izvestaj izvestaj in izvestaji)
+                        {
+                            lvi = new ListViewItem(izvestaj.Id.ToString());
+                            Common.Methods.AddItemsToLvIzvestaj(lvi, izvestaj);
+                        }
+
+                        s.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    break;
+            }
+        }
+
+        private void UpdateListViewIzvestaji()
+        {
+            
+        }
+
         private void LoadProjekteInfos()
         {
             try

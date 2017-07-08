@@ -10,11 +10,13 @@ namespace Source.Entiteti
         public virtual String SIme { get; set; }
         public virtual String Prezime { get; set; }
 
-        public virtual IList<Predmet> Predmeti { get; set; }
+        public virtual IList<Predaje> Predmeti { get; set; }
+
+        //public virtual IList<Predmet> Predmeti { get; set; }
 
         public Nastavnik()
         {
-            Predmeti = new List<Predmet>();
+            Predmeti = new List<Predaje>();
         }
     }
 }

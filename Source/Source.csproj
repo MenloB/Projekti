@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Common\Methods.cs" />
     <Compile Include="DataLayer.cs" />
+    <Compile Include="DataProvider.cs" />
     <Compile Include="DodajAutora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +122,18 @@
     </Compile>
     <Compile Include="DTOManager.cs" />
     <Compile Include="DTOs.cs" />
+    <Compile Include="DTOs\AutorView.cs" />
+    <Compile Include="DTOs\ClanakView.cs" />
+    <Compile Include="DTOs\GrupaView.cs" />
+    <Compile Include="DTOs\IzvestajView.cs" />
+    <Compile Include="DTOs\KnjigaView.cs" />
+    <Compile Include="DTOs\LiteraturaView.cs" />
+    <Compile Include="DTOs\NastavnikView.cs" />
+    <Compile Include="DTOs\PredmetView.cs" />
+    <Compile Include="DTOs\ProjekatView.cs" />
+    <Compile Include="DTOs\RadView.cs" />
+    <Compile Include="DTOs\StudentView.cs" />
+    <Compile Include="DTOs\WebStraniceView.cs" />
     <Compile Include="EditAutora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +202,8 @@
     </Compile>
     <Compile Include="Entiteti\Autor.cs" />
     <Compile Include="Entiteti\Clanak.cs" />
+    <Compile Include="Entiteti\Predaje.cs" />
+    <Compile Include="Entiteti\RadiNa.cs" />
     <Compile Include="Entiteti\Grupa.cs" />
     <Compile Include="Entiteti\Izvestaj.cs" />
     <Compile Include="Entiteti\Knjiga.cs" />
@@ -215,8 +230,10 @@
     <Compile Include="Mapiranja\LiteraturaMapiranja.cs" />
     <Compile Include="Mapiranja\NastavnikMapiranja.cs" />
     <Compile Include="Mapiranja\PrakticniProjekatMapiranja.cs" />
+    <Compile Include="Mapiranja\PredajeMapiranja.cs" />
     <Compile Include="Mapiranja\PredmetMapiranja.cs" />
     <Compile Include="Mapiranja\ProjekatMapiranja.cs" />
+    <Compile Include="Mapiranja\RadiNaMapiranja.cs" />
     <Compile Include="Mapiranja\RadMapiranja.cs" />
     <Compile Include="Mapiranja\StudentMapiranja.cs" />
     <Compile Include="Mapiranja\TeorijskiProjekatMapiranja.cs" />

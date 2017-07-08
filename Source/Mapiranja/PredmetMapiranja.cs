@@ -17,6 +17,8 @@ namespace Source.Mapiranja
 
             References(x => x.Profesor).Column("NASTAVNIK").Cascade.All().LazyLoad();
 
+            //HasMany(x => x.Profesori).KeyColumn("OSOBA").Cascade.All().LazyLoad();
+
             HasManyToMany(x => x.Profesori)
                 .Table("PREDAJE")
                 .ParentKeyColumn("SIFRA")

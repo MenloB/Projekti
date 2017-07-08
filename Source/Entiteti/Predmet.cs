@@ -12,11 +12,13 @@ namespace Source.Entiteti
 
         public virtual Nastavnik Profesor { get; set; }
 
-        public virtual IList<Nastavnik> Profesori { get; set; }
-        
+        public virtual IList<Predaje> Profesori { get; set; }
+
+        //public virtual IList<Nastavnik> Profesori { get; set; }
+
         public Predmet()
         {
-            Profesori = new List<Nastavnik>();
+            Profesori = new List<Predaje>();
         }
     }
 }

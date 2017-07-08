@@ -38,7 +38,7 @@ namespace Source
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Godina mora biti ceo broj");
+                MessageBox.Show("Godina mora biti ceo broj" + ex.Message);
             }
             k.Tip = "KNJIGA";
             k.Pisao = (Autor)comboBox1.SelectedItem;
